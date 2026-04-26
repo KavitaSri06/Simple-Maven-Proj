@@ -5,7 +5,7 @@ pool:
   name: 'maventest'
 
 steps:
-- script: mvnw.cmd clean test package
+- script: mvn clean test package
   displayName: 'Build, Test and Package'
 
 - task: PublishTestResults@2
