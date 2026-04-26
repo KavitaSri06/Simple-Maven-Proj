@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: 'Testagent'
+  name: 'maventest'
 
 steps:
 - script: mvnw.cmd clean test package
