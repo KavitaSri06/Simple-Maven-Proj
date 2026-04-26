@@ -1,0 +1,18 @@
+trigger:
+- main
+
+pool:
+  name: 'Testagent'
+
+steps:
+- script: mvnw.cmd clean test package
+  displayName: 'Build, Test and Package'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: 'target'
+    artifactName: 'drop'
